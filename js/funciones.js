@@ -1,25 +1,27 @@
 // primer pre entrega usando los condicionales y ciclos
+//delcaracion de variables 
+let saldoInicial = prompt("ingrese el monto con el cual desea operar");
+let saldoActual = saldoInicial;
+//interaccion con el usuario
+alert("¡Bienvenido a la gestion de cuenta");
+while (true) {
+  console.log(`Tu saldo actual es: ${saldoActual}`);
 
-//condicional if
-let numero = prompt("por favor ingrese un Numero ");
-if (numero > 0) {
-  console.log("El número es positivo");
-} else if (numero < 0) {
-  console.log("El número es negativo");
-} else {
-  console.log("El número es cero");
+  let opcion = prompt("¿Deseas realizar una operacion? (s/n): ");
+
+  if (opcion === "s") {
+    let cantidad = parseFloat(prompt("Ingresa la cantidad a operar: "));
+
+    if (cantidad <= saldoActual ) {
+      alert("operacion exitosa.");
+    } else {
+      alert("No tienes suficiente saldo para realizar esta operacion.");
+    }
+  } else if (opcion === "n") {
+    break;
+  } else {
+    alert("Opción invalida. Por favor, selecciona 's' o 'n'.");
+  }
 }
 
-//ciclo for
-console.log("Contando del 0 al numero elegido");
-for (let i = 0; i <= numero; i++) {
-  console.log(i);
-}
-
-//ciclo do-while
-let inicial = 0;
-console.log("Contando del 0 al nnuemero elegido");
-do {
-  console.log(inicial);
-  inicial++;
-} while (inicial <= numero);
+alert(`Gracias por utilizar esta gestion de cuenta Tu saldo final es: ${saldoActual}`);
